@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barakah Birthday | Sumaiya</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #d4af37;
+      --deep-green: #061f17;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #0c3b2e, var(--deep-green));
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .font-amiri { font-family: 'Amiri', serif; }
+    .font-playfair { font-family: 'Playfair Display', serif; }
+
+    /* Petals */
+    .petal {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background: #f8bbd0;
+      border-radius: 50%;
+      opacity: 0.6;
+      pointer-events: none;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      from { transform: translateY(-10vh) rotate(0deg); }
+      to { transform: translateY(110vh) rotate(360deg); }
+    }
+
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+<!-- Petals -->
+<div id="petals"></div>
+
+<!-- Gift Screen -->
+<section id="gift" class="min-h-screen flex flex-col items-center justify-center text-center space-y-8">
+  <div onclick="reveal()" class="w-40 h-40 bg-gradient-to-br from-yellow-300 to-yellow-600 rounded-3xl flex items-center justify-center shadow-2xl cursor-pointer hover:scale-110 transition">
+    <span class="text-6xl">🎁</span>
+  </div>
+
+  <button onclick="reveal()" class="px-10 py-4 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-bold text-xl shadow-xl hover:scale-105 transition">
+    Sumaiya, Reveal Barakah ✨
+  </button>
+
+  <p class="italic text-yellow-300">Waiting for your touch…</p>
+</section>
+
+<!-- Main Content -->
+<section id="content" class="hidden max-w-5xl mx-auto px-6 py-24 space-y-20">
+
+  <header class="text-center space-y-6">
+    <h1 class="font-amiri text-6xl md:text-8xl text-transparent bg-clip-text bg-gradient-to-b from-yellow-200 to-yellow-500">
+      Barakah Filled Birthday<br>
+      <span class="italic">Sumaiya</span> 💕
+    </h1>
+    <p class="font-playfair text-2xl italic text-yellow-200">
+      “A beacon of light in the path of healing”
+    </p>
+  </header>
+
+  <main class="bg-white/5 backdrop-blur-xl rounded-3xl p-10 md:p-16 shadow-2xl text-center space-y-10">
+    <div class="text-sm uppercase tracking-widest text-yellow-400">
+      To The Best Lab Technician
+    </div>
+
+    <h2 class="font-amiri text-4xl text-yellow-200">
+      May your hands always bring Shifa
+    </h2>
+
+    <p class="font-playfair italic text-xl text-gray-200">
+      “Happy Birthday, Sumaiya 🌙 May Allah ﷻ fill your days with smiles, bless your hands with success, and your heart with peace and barakah.
+    </p>
+
+    <div class="border border-yellow-400/40 rounded-3xl p-8 italic font-amiri text-2xl text-yellow-300">
+      اللَّهُمَّ بَارِكْ لَهَا فِي عُمْرِهَا وَعِلْمِهَا وَعَمَلِهَا
+      <div class="text-sm mt-4 opacity-80">
+        (O Allah, bless her age, knowledge, and deeds)
+      </div>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-4 text-yellow-300">
+      <span class="px-5 py-2 border border-white/10 rounded-xl">🩺 Medical Excellence</span>
+      <span class="px-5 py-2 border border-white/10 rounded-xl">🌙 Spiritual Growth</span>
+      <span class="px-5 py-2 border border-white/10 rounded-xl">💖 Endless Joy</span>
+      <span class="px-5 py-2 border border-white/10 rounded-xl">🕊️ Eternal Peace</span>
+    </div>
+  </main>
+
+  <footer class="text-center text-sm text-yellow-400/70">
+    Honoring Your Journey • 2026 / 1447 AH<br>
+    <span class="italic text-gray-400">
+      “Whoever saves one life, it is as if he saved all mankind.”
+    </span>
+  </footer>
+
+</section>
+
+<script>
+  // Petals
+  const petalContainer = document.getElementById('petals');
+  for (let i = 0; i < 30; i++) {
+    const p = document.createElement('div');
+    p.className = 'petal';
+    p.style.left = Math.random() * 100 + 'vw';
+    p.style.animationDuration = 6 + Math.random() * 6 + 's';
+    p.style.animationDelay = Math.random() * 5 + 's';
+    petalContainer.appendChild(p);
+  }
+
+  function reveal() {
+    document.getElementById('gift').classList.add('hidden');
+    document.getElementById('content').classList.remove('hidden');
+    window.scrollTo(0, 0);
+  }
+</script>
+
+</body>
+  </html>
